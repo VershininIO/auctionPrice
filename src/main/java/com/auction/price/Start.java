@@ -14,7 +14,12 @@ import java.util.TreeSet;
 public class Start {
     public static void main(String[] args) throws IOException {
 
-        String path = Start.class.getClassLoader().getResource("case1").getPath();
+//        String path = Start.class.getClassLoader().getResource("case1").getPath();
+        if (args.length != 1) {
+            throw new RuntimeException("Illegal argument count \"" + args.length + "\"");
+        }
+
+        String path = args[0];
 
         Processor processor = new Processor();
 
